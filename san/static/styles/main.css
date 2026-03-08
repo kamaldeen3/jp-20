@@ -1,0 +1,14 @@
+:root {
+	--bg: #ffffff;
+	--surface: #f0f0f0;
+	--text: #1f1f1f;
+	--muted: #666666;
+	--border: #dddddd;
+	--input-bg: #ffffff;
+	--link: #007bff;
+}
+
+body {
+	background-color: var(--bg);
+	color: var(--text);
+}

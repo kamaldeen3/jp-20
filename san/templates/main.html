@@ -1,12 +1,22 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+        {% block head %}{% endblock head %}
+        <link rel="stylesheet" href="{% static 'styles/darkmode.css' %}">
     </head>
     <body>
     {% include 'navbar.html' %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</li>
+        {% endfor %}
+    </ul>
     {% block content %}
     {% endblock content %}
+    <script src="{% static 'js/fontslider.js' %}"></script>
+    <script src="{% static 'js/a11y-toggle.js' %}"></script>
+    <script src="{% static 'js/highcontrast.js' %}"></script>
 </body>
 </html>

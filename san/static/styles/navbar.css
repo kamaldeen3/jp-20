@@ -7,6 +7,10 @@ body {
   font-family: 'segoe ui';
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .nav {
   height: 50px;
   width: 100%;
@@ -23,6 +27,7 @@ body {
   font-size: 22px;
   color: #fff;
   padding: 10px 10px 10px 10px;
+  text-decoration: none;
 }
 
 .nav > .nav-btn {
@@ -48,6 +53,82 @@ body {
 
 .nav > #nav-check {
   display: none;
+}
+
+.a11y-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.a11y-panel {
+  position: absolute;
+  right: 10px;
+  top: 90px;
+  background: #333;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  z-index: 1000;
+  min-width: 260px;
+}
+
+.a11y-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.a11y-btn {
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+#a11yPanel input[type="range"] { width: 140px; }
+
+.a11y-reset {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.a11y-contrast { margin-top: 10px; }
+
+.a11y-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #efefef;
+  font-size: 14px;
+}
+
+html.high-contrast body { background: #000; color: #fff; }
+html.high-contrast a { color: #00ffff; text-decoration: underline; }
+html.high-contrast .nav { background-color: #000; }
+html.high-contrast .nav > .nav-links > a { color: #fff; }
+html.high-contrast .nav > .nav-links > a:hover { background-color: #222; }
+html.high-contrast button,
+html.high-contrast input {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+@media (max-width: 768px) {
+  .a11y-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 14px 12px;
+  }
+
+  .a11y-panel {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    border: none;
+  }
+
+  #a11yPanel input[type="range"] { width: 100%; }
 }
 
 @media (max-width:600px) {
