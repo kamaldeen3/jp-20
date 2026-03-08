@@ -115,6 +115,10 @@ html.high-contrast input {
 }
 
 @media (max-width: 768px) {
+  .nav > .nav-links {
+    flex-wrap: wrap;
+  }
+
   .a11y-toggle {
     width: 100%;
     justify-content: flex-start;
